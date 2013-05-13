@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  stype: MyString
+  contract_day: 1
+  isstable: false
+  isflexiblefee: false
+
+two:
+  stype: MyString
+  contract_day: 1
+  isstable: false
+  isflexiblefee: false

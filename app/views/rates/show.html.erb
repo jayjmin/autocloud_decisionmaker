@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Resourceset:</b>
+  <%= @rate.resourceset.show %>
+</p>
+
+<p>
+  <b>Servicetype:</b>
+  <%= @rate.servicetype.show %>
+</p>
+
+<p>
+  <b>Operatingsystem:</b>
+  <%= @rate.operatingsystem.name %>
+</p>
+
+<p>
+  <b>Geo:</b>
+  <%= @rate.geo.show %>
+</p>
+
+<p>
+  <b>Rate Elems:</b><br>
+  <% @rate.rateelems.each do |rateelem|%>
+  <%=rateelem.item %>:
+  $<%=rateelem.price_period %> /
+  <%=format_hour rateelem.period_hour %> hours<br>
+  <% end %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_rate_path(@rate) %> |
+<%= link_to 'Back', rates_path %>

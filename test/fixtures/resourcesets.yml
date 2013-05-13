@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  provider: 
+  name: MyString
+  cpu: 1.5
+  ram: 1.5
+  hdd: 1.5
+  iscustomizable: false
+
+two:
+  provider: 
+  name: MyString
+  cpu: 1.5
+  ram: 1.5
+  hdd: 1.5
+  iscustomizable: false

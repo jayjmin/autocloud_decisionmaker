@@ -1,0 +1,33 @@
+<%= form_for(@rateelem) do |f| %>
+  <% if @rateelem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rateelem.errors.count, "error") %> prohibited this rateelem from being saved:</h2>
+
+      <ul>
+      <% @rateelem.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rate %><br />
+    <%= collection_select :rateelem, :rate_id, Rate.all, :id, :show %>
+  </div>
+  <div class="field">
+    <%= f.label :item %><br />
+    <%= f.text_field :item %>
+  </div>
+  <div class="field">
+    <%= f.label :period_hour %><br />
+    <%= f.number_field :period_hour %>
+  </div>
+  <div class="field">
+    <%= f.label :price_period %><br />
+    <%= f.text_field :price_period %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

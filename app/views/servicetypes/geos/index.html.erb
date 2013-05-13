@@ -1,0 +1,25 @@
+<h1>Listing geos</h1>
+
+<table>
+  <tr>
+    <th>City</th>
+    <th>Continent</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @geos.each do |geo| %>
+  <tr>
+    <td><%= geo.city %></td>
+    <td><%= geo.continent %></td>
+    <td><%= link_to 'Show', geo %></td>
+    <td><%= link_to 'Edit', edit_geo_path(geo) %></td>
+    <td><%= link_to 'Destroy', geo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Geo', new_geo_path %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Rateset:</b>
+  <%= @rate.rateset %>
+</p>
+
+<p>
+  <b>Item:</b>
+  <%= @rate.item %>
+</p>
+
+<p>
+  <b>Period hour:</b>
+  <%= @rate.period_hour %>
+</p>
+
+<p>
+  <b>Rate:</b>
+  <%= @rate.rate %>
+</p>
+
+
+<%= link_to 'Edit', edit_rate_path(@rate) %> |
+<%= link_to 'Back', rates_path %>

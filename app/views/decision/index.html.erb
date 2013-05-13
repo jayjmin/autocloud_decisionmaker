@@ -1,0 +1,66 @@
+<h1>Find the best cloud provider</h1>
+<%= form_tag("/decision/find", :method => "get") do %>
+
+  <div class="field">
+    <%= label_tag(:mincpu, "CPU cores:") %>
+    <%= text_field_tag(:mincpu, '0.5', :size=> 4) %>
+
+    <%= label_tag(:minram, "RAM (MB):") %>
+    <%= text_field_tag(:minram, '512', :size => 5) %>
+
+    <%= label_tag(:minhdd, "Disk (GB):") %>
+    <%= text_field_tag(:minhdd, '20', :size => 5) %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :os, "Operating System" %><br />
+    <%= collection_select :os, :operatingsystem_id, Operatingsystem.all, :id, :name, {:include_blank => "Any"} %>
+  </div>
+  <div class="field">
+    <%= label_tag :location %><br />
+    <%= collection_select :location, :geo_id, Geo.all, :id, :show, {:include_blank => "Any"} %>
+  </div>
+
+  <div class="field">
+    <%= label_tag(:contract, "Contract period (None = 0):") %>
+    <%= text_field_tag(:contract_year, '0', :size => 2) %> years
+    <%= text_field_tag(:contract_month, '0', :size => 2) %> months
+    <%= text_field_tag(:contract, '0', :size => 2) %> days
+  </div>
+
+  <div class="field">
+    <%= label_tag(:isspot, "Spot price?") %>
+    <%= check_box_tag(:isspot, "true", false) %>
+  </div>
+ 
+  <div class="field">
+    <%= label_tag(:hours, "Expected using hours in total:") %>
+    <%= text_field_tag(:hours_year, '0', :size => 2) %> years
+    <%= text_field_tag(:hours_month, '1', :size => 2) %> months
+    <%= text_field_tag(:hours_day, '0', :size => 2) %> days
+    <%= text_field_tag(:hours, '0', :size => 2) %> hours
+  </div>
+<hr>
+<h1>Optional information for Automatic Provisioner</h1>
+  <div class="field">
+    <%= label_tag(:nummachine, "How many machines?") %>
+    <%= text_field_tag(:nummachine, '1', :size => 3) %>
+  </div>
+ 
+  <div class="field">
+    <%= label_tag(:forceonce, "Do you want to force to allocate all machines in a single provider?") %>
+    <%= check_box_tag(:forceonce, "true", true) %>
+  </div>
+
+  <div class="field">
+    Image(Operating System) Details : 
+    <%= label_tag(:os_name) %>
+    <%= text_field_tag(:os_name, 'Ubuntu', :size => 10) %>
+    <%= label_tag(:os_version) %>
+    <%= text_field_tag(:os_version, '12.04', :size => 10) %>
+    <%= label_tag(:os_64bit) %>
+    <%= check_box_tag(:os_64bit, "64", true) %>
+  </div>
+ 
+  <%= submit_tag("Search") %>
+<% end %>

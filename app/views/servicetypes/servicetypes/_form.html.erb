@@ -1,0 +1,33 @@
+<%= form_for(@servicetype) do |f| %>
+  <% if @servicetype.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@servicetype.errors.count, "error") %> prohibited this servicetype from being saved:</h2>
+
+      <ul>
+      <% @servicetype.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :stype %><br />
+    <%= f.text_field :stype %>
+  </div>
+  <div class="field">
+    <%= f.label :contract_day %><br />
+    <%= f.number_field :contract_day %>
+  </div>
+  <div class="field">
+    <%= f.label :isstable %><br />
+    <%= f.check_box :isstable %>
+  </div>
+  <div class="field">
+    <%= f.label :isflexiblefee %><br />
+    <%= f.check_box :isflexiblefee %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

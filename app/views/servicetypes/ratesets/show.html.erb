@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Resourceset:</b>
+  <%= @rateset.resourceset %>
+</p>
+
+<p>
+  <b>Servicetype:</b>
+  <%= @rateset.servicetype %>
+</p>
+
+<p>
+  <b>Operatingsystem:</b>
+  <%= @rateset.operatingsystem %>
+</p>
+
+<p>
+  <b>Geo:</b>
+  <%= @rateset.geo %>
+</p>
+
+
+<%= link_to 'Edit', edit_rateset_path(@rateset) %> |
+<%= link_to 'Back', ratesets_path %>

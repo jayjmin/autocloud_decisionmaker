@@ -1,0 +1,29 @@
+<h1>Listing rates</h1>
+
+<table>
+  <tr>
+    <th>Rateset</th>
+    <th>Item</th>
+    <th>Period hour</th>
+    <th>Rate</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rates.each do |rate| %>
+  <tr>
+    <td><%= rate.rateset %></td>
+    <td><%= rate.item %></td>
+    <td><%= rate.period_hour %></td>
+    <td><%= rate.rate %></td>
+    <td><%= link_to 'Show', rate %></td>
+    <td><%= link_to 'Edit', edit_rate_path(rate) %></td>
+    <td><%= link_to 'Destroy', rate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rate', new_rate_path %>

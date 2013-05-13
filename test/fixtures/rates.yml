@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  resourceset: 
+  servicetype: 
+  operatingsystem: 
+  geo: 
+
+two:
+  resourceset: 
+  servicetype: 
+  operatingsystem: 
+  geo: 

@@ -1,0 +1,11 @@
+rails generate scaffold Provider name:string 
+rails generate scaffold Operatingsystem name:string
+rails generate scaffold Geo city:string continent:string
+rails generate scaffold Servicetype stype:string contract_day:integer isstable:boolean isflexiblefee:boolean
+rails generate scaffold Resourceset provider:references name:string cpu:float ram:float hdd:float iscustomizable:boolean
+rails generate scaffold Rate resourceset:references servicetype:references operatingsystem:references geo:references
+rails generate scaffold Rateelem rate:references item:string period_hour:integer price_period:float
+rails generate scaffold Image provider:references operatingsystem:references imgid:string
+rails generate scaffold Jcloudnames provider:references geo:references providername:string locationname:string
+
+rails generate controller Decision find

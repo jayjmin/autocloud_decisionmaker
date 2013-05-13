@@ -1,0 +1,29 @@
+<h1>Listing servicetypes</h1>
+
+<table>
+  <tr>
+    <th>Stype</th>
+    <th>Contract day</th>
+    <th>Isstable</th>
+    <th>Isflexiblefee</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @servicetypes.each do |servicetype| %>
+  <tr>
+    <td><%= servicetype.stype %></td>
+    <td><%= servicetype.contract_day %></td>
+    <td><%= servicetype.isstable %></td>
+    <td><%= servicetype.isflexiblefee %></td>
+    <td><%= link_to 'Show', servicetype %></td>
+    <td><%= link_to 'Edit', edit_servicetype_path(servicetype) %></td>
+    <td><%= link_to 'Destroy', servicetype, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Servicetype', new_servicetype_path %>

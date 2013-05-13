@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Provider:</b>
+  <%= @resourceset.provider.name %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @resourceset.name %>
+</p>
+
+<p>
+  <b>Cpu:</b>
+  <%= @resourceset.cpu %>
+</p>
+
+<p>
+  <b>Ram:</b>
+  <%= @resourceset.ram %>
+</p>
+
+<p>
+  <b>Hdd:</b>
+  <%= @resourceset.hdd %>
+</p>
+
+<p>
+  <b>Iscustomizable:</b>
+  <%= @resourceset.iscustomizable %>
+</p>
+
+
+<%= link_to 'Edit', edit_resourceset_path(@resourceset) %> |
+<%= link_to 'Back', resourcesets_path %>

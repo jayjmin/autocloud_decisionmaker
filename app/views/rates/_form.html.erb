@@ -1,0 +1,33 @@
+<%= form_for(@rate) do |f| %>
+  <% if @rate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rate.errors.count, "error") %> prohibited this rate from being saved:</h2>
+
+      <ul>
+      <% @rate.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :resourceset %><br />
+    <%= collection_select :rate, :resourceset_id, Resourceset.all, :id, :show %>
+  </div>
+  <div class="field">
+    <%= f.label :servicetype %><br />
+    <%= collection_select :rate, :servicetype_id, Servicetype.all, :id, :show %>
+  </div>
+  <div class="field">
+    <%= f.label :operatingsystem %><br />
+    <%= collection_select :rate, :operatingsystem_id, Operatingsystem.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :geo %><br />
+    <%= collection_select :rate, :geo_id, Geo.all, :id, :show %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

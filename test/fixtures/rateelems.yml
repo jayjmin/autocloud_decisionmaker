@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  rate: 
+  item: MyString
+  period_hour: 1
+  price_period: 1.5
+
+two:
+  rate: 
+  item: MyString
+  period_hour: 1
+  price_period: 1.5

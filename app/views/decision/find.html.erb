@@ -1,0 +1,56 @@
+<h1>Listing rates</h1>
+
+<table>
+  <tr>
+    <th>Provider</th>
+    <th>Rsrc</th>
+    <th>CPU <br>(cores)</th>
+    <th>RAM <br>(MB)</th>
+    <th>Disk <br>(GB)</th>
+    <th>OS</th>
+    <th>Location</th>
+    <th>Servicetype</th>
+    <th>Contract period</th>
+    <th>Expected usage period</th>
+    <th>Price</th>
+    <th></th>
+  </tr>
+
+<% @rates.each do |rate| %>
+  <tr>
+    <td><%= rate.provider.name %></td>
+    <td><%= rate.resourceset.name %></td>
+    <td><%= rate.resourceset.cpu %></td>
+    <td><%= rate.resourceset.ram %></td>
+    <td><%= rate.resourceset.hdd %></td>
+    <td><%= rate.operatingsystem.name %></td>
+    <td><%= rate.geo.show %></td>
+    <td><%= rate.servicetype.stype %></td>
+    <td><%= format_day rate.servicetype.contract_day %></td>
+    <td><%= format_hour rate.hours %></td>
+    <td>$<%= rate.price %></td>
+    <td></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<table>
+  <tr>
+    <th>For exporting to jCloud auto provisioner</th>
+  </tr>
+  <tr>
+<td>
+<textarea rows="20" cols="80">
+<% @rates.each do |rate| %>
+<%= rate.export_jcloud params %>
+<%  params[:nummachine] = 0 %>
+<% end %>
+</textarea>
+</tr>
+</tr>
+</table>
+
+<br />
+

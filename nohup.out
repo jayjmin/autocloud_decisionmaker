@@ -1,0 +1,6 @@
+Warning: can not check `/etc/sudoers` for `secure_path`, falling back to call via `/usr/bin/env`, this breaks rules from `/etc/sudoers`. export rvmsudo_secure_path=1 to avoid the warning.A server is already running. Check /home/administrator/rails/autocloud2/tmp/pids/server.pid.
+=> Booting WEBrick
+=> Rails 3.2.13 application starting in development on http://0.0.0.0:80
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
+Exiting

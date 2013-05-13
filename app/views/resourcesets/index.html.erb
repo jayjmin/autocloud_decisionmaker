@@ -1,0 +1,33 @@
+<h1>Listing resourcesets</h1>
+
+<table>
+  <tr>
+    <th>Provider</th>
+    <th>Name</th>
+    <th>Cpu</th>
+    <th>Ram</th>
+    <th>Hdd</th>
+    <th>Iscustomizable</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @resourcesets.each do |resourceset| %>
+  <tr>
+    <td><%= resourceset.provider.name %></td>
+    <td><%= resourceset.name %></td>
+    <td><%= resourceset.cpu %></td>
+    <td><%= resourceset.ram %></td>
+    <td><%= resourceset.hdd %></td>
+    <td><%= resourceset.iscustomizable %></td>
+    <td><%= link_to 'Show', resourceset %></td>
+    <td><%= link_to 'Edit', edit_resourceset_path(resourceset) %></td>
+    <td><%= link_to 'Destroy', resourceset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Resourceset', new_resourceset_path %>

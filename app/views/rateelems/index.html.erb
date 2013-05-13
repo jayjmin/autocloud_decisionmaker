@@ -1,0 +1,29 @@
+<h1>Listing rateelems</h1>
+
+<table>
+  <tr>
+    <th>Rate</th>
+    <th>Item</th>
+    <th>Period hour</th>
+    <th>Price period</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rateelems.each do |rateelem| %>
+  <tr>
+    <td><%= rateelem.rate.show %></td>
+    <td><%= rateelem.item %></td>
+    <td><%= rateelem.period_hour %></td>
+    <td><%= rateelem.price_period %></td>
+    <td><%= link_to 'Show', rateelem %></td>
+    <td><%= link_to 'Edit', edit_rateelem_path(rateelem) %></td>
+    <td><%= link_to 'Destroy', rateelem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rateelem', new_rateelem_path %>

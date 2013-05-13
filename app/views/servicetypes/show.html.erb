@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Stype:</b>
+  <%= @servicetype.stype %>
+</p>
+
+<p>
+  <b>Contract day:</b>
+  <%= @servicetype.contract_day %>
+</p>
+
+<p>
+  <b>Isstable:</b>
+  <%= @servicetype.isstable %>
+</p>
+
+<p>
+  <b>Isflexiblefee:</b>
+  <%= @servicetype.isflexiblefee %>
+</p>
+
+
+<%= link_to 'Edit', edit_servicetype_path(@servicetype) %> |
+<%= link_to 'Back', servicetypes_path %>

@@ -1,0 +1,41 @@
+<%= form_for(@resourceset) do |f| %>
+  <% if @resourceset.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@resourceset.errors.count, "error") %> prohibited this resourceset from being saved:</h2>
+
+      <ul>
+      <% @resourceset.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :provider %><br />
+    <%= f.text_field :provider %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :cpu %><br />
+    <%= f.text_field :cpu %>
+  </div>
+  <div class="field">
+    <%= f.label :ram %><br />
+    <%= f.text_field :ram %>
+  </div>
+  <div class="field">
+    <%= f.label :hdd %><br />
+    <%= f.text_field :hdd %>
+  </div>
+  <div class="field">
+    <%= f.label :iscustomizable %><br />
+    <%= f.check_box :iscustomizable %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

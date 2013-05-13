@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Provider:</b>
+  <%= @image.provider %>
+</p>
+
+<p>
+  <b>Operatingsystem:</b>
+  <%= @image.operatingsystem %>
+</p>
+
+<p>
+  <b>Imgid:</b>
+  <%= @image.imgid %>
+</p>
+
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>

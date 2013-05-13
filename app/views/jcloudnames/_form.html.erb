@@ -1,0 +1,33 @@
+<%= form_for(@jcloudname) do |f| %>
+  <% if @jcloudname.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@jcloudname.errors.count, "error") %> prohibited this jcloudname from being saved:</h2>
+
+      <ul>
+      <% @jcloudname.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :provider %><br />
+    <%= collection_select :jcloudname, :provider_id, Provider.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :geo %><br />
+    <%= collection_select :jcloudname, :geo_id, Geo.all, :id, :show %>
+  </div>
+  <div class="field">
+    <%= f.label :providername %><br />
+    <%= f.text_field :providername %>
+  </div>
+  <div class="field">
+    <%= f.label :locationname %><br />
+    <%= f.text_field :locationname %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
